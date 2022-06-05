@@ -13,6 +13,7 @@
 		2DA2DC35284D3F87008ACA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2DC33284D3F87008ACA26 /* Main.storyboard */; };
 		2DA2DC37284D3F89008ACA26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2DC36284D3F89008ACA26 /* Assets.xcassets */; };
 		2DA2DC3A284D3F89008ACA26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2DC38284D3F89008ACA26 /* LaunchScreen.storyboard */; };
+		2DA2DC44284D4A5C008ACA26 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA2DC43284D4A5C008ACA26 /* FilmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2DA2DC36284D3F89008ACA26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DA2DC39284D3F89008ACA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DA2DC3B284D3F89008ACA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DA2DC43284D4A5C008ACA26 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2DA2DC2D284D3F87008ACA26 /* AppDelegate.swift */,
 				2DA2DC2F284D3F87008ACA26 /* SceneDelegate.swift */,
 				2DA2DC31284D3F87008ACA26 /* ViewController.swift */,
+				2DA2DC43284D4A5C008ACA26 /* FilmModel.swift */,
 				2DA2DC33284D3F87008ACA26 /* Main.storyboard */,
 				2DA2DC36284D3F89008ACA26 /* Assets.xcassets */,
 				2DA2DC38284D3F89008ACA26 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				2DA2DC32284D3F87008ACA26 /* ViewController.swift in Sources */,
 				2DA2DC2E284D3F87008ACA26 /* AppDelegate.swift in Sources */,
 				2DA2DC30284D3F87008ACA26 /* SceneDelegate.swift in Sources */,
+				2DA2DC44284D4A5C008ACA26 /* FilmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
