@@ -9,17 +9,15 @@ import Foundation
 
 class ParsingFilms {
     
-//    var onCompletion: ((Film) -> (Void))?
-    func filmsInfo(onCompletion: @escaping (Film)->()) {
-//    func filmsInfo(forFilmId filmId: Int) {
+    func filmsInfo(onCompletion: @escaping ([Result])->()) {
         let urlString =
-    "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)"
+        "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
-//                let dataString = String(data: data, encoding: .utf8)
-//                print(dataString!)
+                //                   let dataString = String(data: data, encoding: .utf8)
+                //                        print(dataString!)
                 if let film = self.parseJSON(withData: data) {
                     onCompletion(film)
                 }
@@ -28,19 +26,15 @@ class ParsingFilms {
         task.resume()
     }
     
-    func parseJSON(withData data: Data) -> Film? {
-       let decoder = JSONDecoder()
+    func parseJSON(withData data: Data) -> [Result]? {
+        let decoder = JSONDecoder()
         do {
-            let filmsData = try decoder.decode(Result.self, from: data)
-            guard let film = Film(filmsData: filmsData) else {
-                return nil
-            }
-            return film
+            let filmsData = try decoder.decode(FilmsData.self, from: data)
+            //                guard let film = Film(filmsData: filmsData.results) else {
+            return filmsData.results
         } catch let error as NSError {
             print(error.localizedDescription)
         }
         return nil
     }
 }
-
-

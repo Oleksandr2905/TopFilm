@@ -13,8 +13,5 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    
-    
-    
-
 }
+
