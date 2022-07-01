@@ -16,8 +16,8 @@ class ParsingFilms {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
-                //                   let dataString = String(data: data, encoding: .utf8)
-                //                        print(dataString!)
+                let dataString = String(data: data, encoding: .utf8)
+                print(dataString!)
                 if let film = self.parseJSON(withData: data) {
                     onCompletion(film)
                 }
