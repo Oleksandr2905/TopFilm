@@ -13,12 +13,15 @@
 		2DA2DC35284D3F87008ACA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2DC33284D3F87008ACA26 /* Main.storyboard */; };
 		2DA2DC37284D3F89008ACA26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2DC36284D3F89008ACA26 /* Assets.xcassets */; };
 		2DA2DC3A284D3F89008ACA26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2DC38284D3F89008ACA26 /* LaunchScreen.storyboard */; };
-		2DB5127728566BDD005F202B /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5127628566BDD005F202B /* Parsing.swift */; };
-		2DB5127928567077005F202B /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5127828567077005F202B /* Constans.swift */; };
+		2DB5127728566BDD005F202B /* ParsingFilms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5127628566BDD005F202B /* ParsingFilms.swift */; };
+		2DB5127928567077005F202B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5127828567077005F202B /* Constants.swift */; };
 		2DB5127B28567CBA005F202B /* FilmsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5127A28567CBA005F202B /* FilmsData.swift */; };
 		2DC34ACD284E671C00C76317 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC34ACC284E671C00C76317 /* CustomTableViewCell.swift */; };
 		2DC7E916286ECC3F00D0DEF1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2DC7E915286ECC3F00D0DEF1 /* .gitignore */; };
 		2DC82ED9285143EC00F1184B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC82ED8285143EC00F1184B /* SecondViewController.swift */; };
+		2DCA35AB287B383100316283 /* FilmsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA35AA287B383100316283 /* FilmsInfo.swift */; };
+		2DCA35AD287B5C4700316283 /* GradientPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA35AC287B5C4600316283 /* GradientPoster.swift */; };
+		2DD766D328776837001D5D23 /* ImageDownloaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD766D228776837001D5D23 /* ImageDownloaderManager.swift */; };
 		2FE201948A96E41F2C438525 /* Pods_Top_Film.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2D747A35A85CE42AD16B78 /* Pods_Top_Film.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,13 +33,16 @@
 		2DA2DC36284D3F89008ACA26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DA2DC39284D3F89008ACA26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DA2DC3B284D3F89008ACA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DB5127628566BDD005F202B /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
-		2DB5127828567077005F202B /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		2DB5127628566BDD005F202B /* ParsingFilms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingFilms.swift; sourceTree = "<group>"; };
+		2DB5127828567077005F202B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DB5127A28567CBA005F202B /* FilmsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsData.swift; sourceTree = "<group>"; };
 		2DC34ACC284E671C00C76317 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2DC47D5A286A1CE100322F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DC7E915286ECC3F00D0DEF1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2DC82ED8285143EC00F1184B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2DCA35AA287B383100316283 /* FilmsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsInfo.swift; sourceTree = "<group>"; };
+		2DCA35AC287B5C4600316283 /* GradientPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPoster.swift; sourceTree = "<group>"; };
+		2DD766D228776837001D5D23 /* ImageDownloaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderManager.swift; sourceTree = "<group>"; };
 		3381FF3BA00464C4B390F9E8 /* Pods-Top Film.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top Film.debug.xcconfig"; path = "Target Support Files/Pods-Top Film/Pods-Top Film.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2D747A35A85CE42AD16B78 /* Pods_Top_Film.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Top_Film.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB59CA1BD1CF4AA3F450D8F /* Pods-Top Film.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top Film.release.xcconfig"; path = "Target Support Files/Pods-Top Film/Pods-Top Film.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,20 +90,55 @@
 		2DA2DC2C284D3F87008ACA26 /* Top Film */ = {
 			isa = PBXGroup;
 			children = (
-				2DA2DC2D284D3F87008ACA26 /* AppDelegate.swift */,
-				2DA2DC2F284D3F87008ACA26 /* SceneDelegate.swift */,
+				2DC37E1B2873869A00AF559D /* App */,
+				2DC37E1C287386BC00AF559D /* Models */,
+				2DC37E1D2873871900AF559D /* Views */,
 				2DA2DC31284D3F87008ACA26 /* ViewController.swift */,
 				2DC34ACC284E671C00C76317 /* CustomTableViewCell.swift */,
-				2DB5127628566BDD005F202B /* Parsing.swift */,
-				2DB5127A28567CBA005F202B /* FilmsData.swift */,
+				2DD766D228776837001D5D23 /* ImageDownloaderManager.swift */,
+				2DCA35AF287B747300316283 /* Presentor */,
+				2DB5127628566BDD005F202B /* ParsingFilms.swift */,
+				2DCA35AA287B383100316283 /* FilmsInfo.swift */,
 				2DC82ED8285143EC00F1184B /* SecondViewController.swift */,
-				2DB5127828567077005F202B /* Constans.swift */,
+				2DCA35AC287B5C4600316283 /* GradientPoster.swift */,
+				2DB5127828567077005F202B /* Constants.swift */,
 				2DA2DC33284D3F87008ACA26 /* Main.storyboard */,
 				2DA2DC36284D3F89008ACA26 /* Assets.xcassets */,
 				2DA2DC38284D3F89008ACA26 /* LaunchScreen.storyboard */,
 				2DA2DC3B284D3F89008ACA26 /* Info.plist */,
 			);
 			path = "Top Film";
+			sourceTree = "<group>";
+		};
+		2DC37E1B2873869A00AF559D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2DA2DC2D284D3F87008ACA26 /* AppDelegate.swift */,
+				2DA2DC2F284D3F87008ACA26 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2DC37E1C287386BC00AF559D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DB5127A28567CBA005F202B /* FilmsData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DC37E1D2873871900AF559D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DCA35AF287B747300316283 /* Presentor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentor;
 			sourceTree = "<group>";
 		};
 		A80371171C049362A0513A20 /* Pods */ = {
@@ -225,10 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB5127728566BDD005F202B /* Parsing.swift in Sources */,
+				2DD766D328776837001D5D23 /* ImageDownloaderManager.swift in Sources */,
+				2DB5127728566BDD005F202B /* ParsingFilms.swift in Sources */,
 				2DB5127B28567CBA005F202B /* FilmsData.swift in Sources */,
+				2DCA35AD287B5C4700316283 /* GradientPoster.swift in Sources */,
 				2DC82ED9285143EC00F1184B /* SecondViewController.swift in Sources */,
-				2DB5127928567077005F202B /* Constans.swift in Sources */,
+				2DB5127928567077005F202B /* Constants.swift in Sources */,
+				2DCA35AB287B383100316283 /* FilmsInfo.swift in Sources */,
 				2DA2DC32284D3F87008ACA26 /* ViewController.swift in Sources */,
 				2DC34ACD284E671C00C76317 /* CustomTableViewCell.swift in Sources */,
 				2DA2DC2E284D3F87008ACA26 /* AppDelegate.swift in Sources */,
