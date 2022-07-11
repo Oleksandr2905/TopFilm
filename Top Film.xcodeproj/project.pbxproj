@@ -93,15 +93,7 @@
 				2DC37E1B2873869A00AF559D /* App */,
 				2DC37E1C287386BC00AF559D /* Models */,
 				2DC37E1D2873871900AF559D /* Views */,
-				2DA2DC31284D3F87008ACA26 /* ViewController.swift */,
-				2DC34ACC284E671C00C76317 /* CustomTableViewCell.swift */,
-				2DD766D228776837001D5D23 /* ImageDownloaderManager.swift */,
 				2DCA35AF287B747300316283 /* Presentor */,
-				2DB5127628566BDD005F202B /* ParsingFilms.swift */,
-				2DCA35AA287B383100316283 /* FilmsInfo.swift */,
-				2DC82ED8285143EC00F1184B /* SecondViewController.swift */,
-				2DCA35AC287B5C4600316283 /* GradientPoster.swift */,
-				2DB5127828567077005F202B /* Constants.swift */,
 				2DA2DC33284D3F87008ACA26 /* Main.storyboard */,
 				2DA2DC36284D3F89008ACA26 /* Assets.xcassets */,
 				2DA2DC38284D3F89008ACA26 /* LaunchScreen.storyboard */,
@@ -130,6 +122,9 @@
 		2DC37E1D2873871900AF559D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DC82ED8285143EC00F1184B /* SecondViewController.swift */,
+				2DC34ACC284E671C00C76317 /* CustomTableViewCell.swift */,
+				2DA2DC31284D3F87008ACA26 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +132,11 @@
 		2DCA35AF287B747300316283 /* Presentor */ = {
 			isa = PBXGroup;
 			children = (
+				2DB5127828567077005F202B /* Constants.swift */,
+				2DCA35AC287B5C4600316283 /* GradientPoster.swift */,
+				2DCA35AA287B383100316283 /* FilmsInfo.swift */,
+				2DB5127628566BDD005F202B /* ParsingFilms.swift */,
+				2DD766D228776837001D5D23 /* ImageDownloaderManager.swift */,
 			);
 			path = Presentor;
 			sourceTree = "<group>";
