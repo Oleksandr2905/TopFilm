@@ -15,7 +15,6 @@ class ParsingFilms {
             let filmsData = try decoder.decode(FilmsData.self, from: data)
             return filmsData.results
         } catch let error as NSError {
-            print("commit")
             print(error.localizedDescription)
         }
         return nil
