@@ -12,8 +12,8 @@ struct FilmsData: Codable {
     enum CodingKeys: String, CodingKey {
         case results
     }
-
 }
+
 struct Result: Codable {
     let backdropPath: String
     let id: Int

@@ -8,7 +8,7 @@
 import Foundation
 
 class ParsingFilms {
-
+    
     func parseJSON(withData data: Data) -> [Result]? {
         let decoder = JSONDecoder()
         do {

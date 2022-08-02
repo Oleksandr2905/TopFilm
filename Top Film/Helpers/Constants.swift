@@ -13,3 +13,5 @@ class Constants {
     let imageURL = "https://image.tmdb.org/t/p/"+"w500"
     let parsingUrlString = "https://api.themoviedb.org/3/movie/popular?api_key="
 }
+
+

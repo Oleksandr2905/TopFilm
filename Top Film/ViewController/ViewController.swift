@@ -11,21 +11,20 @@ import SDWebImage
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
-    
+        
     private var film = [Result]()
-    private var parsingFilms = ParsingFilms()
+    private let filmsInfo = FilmsRequests()
+    
     private let segueIdentifier = "showDetail"
-    private let constants = Constants()
-    private let filmsInfo = FilmsInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         filmsInfo.filmsInfo() { [weak self] data in
-            self?.film = data!
+            self?.film = data ?? []
             self?.updateInterfaceWith()
         }
     }
@@ -40,19 +39,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-//  Dynamic cell height
+    //  Dynamic cell height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
-//    Interface update
+    //    Interface update
     func updateInterfaceWith() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
-//    Transition to SecondViewController by segue.identifier
+    //    Transition to SecondViewController by segue.identifier
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }

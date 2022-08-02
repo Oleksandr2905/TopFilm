@@ -9,10 +9,10 @@ import Foundation
 import SDWebImage
 
 class ImageDownloaderManager {
-class func loadImageFromDatabase(inputImageData: String, outputImage: UIImageView!) -> Void {
+    static func loadImageFromDatabase(inputImageData: String, outputImage: UIImageView) -> Void {
         let constants = Constants()
         let imageOfFilmURL = constants.imageURL+inputImageData
-            guard let url = URL(string: imageOfFilmURL) else { return }
-            outputImage.sd_setImage(with: url, completed: nil)
+        guard let url = URL(string: imageOfFilmURL) else { return }
+        outputImage.sd_setImage(with: url, completed: nil)
     }
 }

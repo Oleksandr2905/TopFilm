@@ -35,7 +35,7 @@ class SecondViewController: UIViewController {
         overviewFilm.text = currentFilms?.overview
         rateFilm.text = currentFilms?.voteAverageString
         datePresentFilm.text = "Release: " + currentFilms!.releaseDate
-        ImageDownloaderManager.loadImageFromDatabase(inputImageData: currentFilms!.posterPath, outputImage: imageFilm)
+        ImageDownloaderManager.loadImageFromDatabase(inputImageData: currentFilms?.posterPath ?? "", outputImage: imageFilm)
         GradientPoster.addBlackGradientLayerInBackground(image: imageFilm, frame: imageFilm.bounds, colors: [.clear, .black])
     }
     

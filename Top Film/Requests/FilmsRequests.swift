@@ -6,11 +6,11 @@
 //
 
 import Foundation
-class FilmsInfo {
+class FilmsRequests {
     
     private let parsingFilms = ParsingFilms()
     private let constants = Constants()
-
+    
     func filmsInfo(onCompletion: @escaping ([Result]?)->()) {
         let urlString = constants.parsingUrlString + "\(constants.apiKey)"
         guard let url = URL(string: urlString) else { return }
