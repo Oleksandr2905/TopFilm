@@ -8,13 +8,13 @@
 import Foundation
 
 struct FilmsData: Codable {
-    let results: [Result]
+    let results: [Film]
     enum CodingKeys: String, CodingKey {
         case results
     }
 }
 
-struct Result: Codable {
+struct Film: Codable {
     let backdropPath: String
     let id: Int
     var idString: String {

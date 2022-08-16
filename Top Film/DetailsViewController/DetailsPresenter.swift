@@ -8,22 +8,22 @@
 import Foundation
 import UIKit
 
-protocol SecondViewPresenterProtocol {
-    func setupSVCDataPresenter()
-    func configure() -> Result?
+protocol DetailsPresenterProtocol {
+    func setupDataPresenter()
+    func configure() -> Film?
 }
 
-class SecondViewPresenter: SecondViewPresenterProtocol {
+class DetailsPresenter: DetailsPresenterProtocol {
     
-    private let view: SecondViewControllerProtocol
-    private var currentFilms: Result?
+    private let view: DetailsViewControllerProtocol
+    private var currentFilms: Film?
     
-    required init(view: SecondViewControllerProtocol, currentFilms1: Result?) {
+    required init(view: DetailsViewControllerProtocol, currentFilms1: Film?) {
         self.view = view
         self.currentFilms = currentFilms1
     }
     
-    func configure() -> Result? {
+    func configure() -> Film? {
         if currentFilms != nil {
             return currentFilms
         } else {
@@ -32,7 +32,7 @@ class SecondViewPresenter: SecondViewPresenterProtocol {
         return currentFilms
     }
     
-    func setupSVCDataPresenter() {
+    func setupDataPresenter() {
         let titleFilm = self.currentFilms?.originalTitle
         let overviewFilm = self.currentFilms?.overview
         let rateFilm = self.currentFilms?.voteAverageString
@@ -42,7 +42,7 @@ class SecondViewPresenter: SecondViewPresenterProtocol {
         ImageDownloaderManager.loadImageFromDatabase(inputImageData: inputImageData ?? "",
                                                      outputImage: imageFilm!)
         
-        self.view.setupSVCData(titleFilm: titleFilm,
+        self.view.setupData(titleFilm: titleFilm,
                                overviewFilm: overviewFilm,
                                rateFilm: rateFilm,
                                datePresentFilm: datePresentFilm,

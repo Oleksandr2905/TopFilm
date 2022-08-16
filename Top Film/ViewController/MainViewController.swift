@@ -8,15 +8,15 @@
 import UIKit
 import SDWebImage
 
-protocol ViewControllerProtocol: AnyObject {
+protocol MainViewControllerProtocol: AnyObject {
     func updateInterfaceWith()
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private var viewPresenter: ViewPresenterProtocol!
+    private var presenter: MainPresenterProtocol!
           
     private let segueIdentifier = "showDetail"
     
@@ -26,18 +26,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
         
-        viewPresenter = ViewPresenter(view: self)
-        viewPresenter.filmsInfoDataView()
+        presenter = MainPresenter(view: self)
+        presenter.filmsInfoDataView()
     }
 //    The number of lines is equal to the number of elements of the object
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewPresenter.getRowsCountAt()
+        return presenter.getRowsCount()
     }
     
 //    Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        cell.updateInterface(film: viewPresenter.configure()[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableViewCell
+        let film = presenter.getFilm(for: indexPath.row)
+        cell.updateInterface(film: film)
         return cell
     }
     
@@ -46,25 +47,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return UITableView.automaticDimension
     }
     
+    //    Transition to SecondViewController by segue.identifier
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let film = presenter.getFilm(for: indexPath.row)
+            let secondVC = segue.destination as! DetailsViewController
+            secondVC.currentFilm = film
+        }
+    }
+}
+    
+extension MainViewController: MainViewControllerProtocol {
     //    Interface update
     func updateInterfaceWith() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-    
-    //    Transition to SecondViewController by segue.identifier
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifier {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let film = viewPresenter.configure()[indexPath.row]
-            let secondVC = segue.destination as! SecondViewController
-            secondVC.currentFilms = film
-        }
-    }
-}
-    
-extension ViewController: ViewControllerProtocol {
-        
 }
 

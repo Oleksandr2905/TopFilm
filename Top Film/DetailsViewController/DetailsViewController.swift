@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol SecondViewControllerProtocol: AnyObject {
-    func setupSVCData(titleFilm: String?,
+protocol DetailsViewControllerProtocol: AnyObject {
+    func setupData(titleFilm: String?,
                       overviewFilm: String?,
                       rateFilm: String?,
                       datePresentFilm: String?,
@@ -17,13 +17,9 @@ protocol SecondViewControllerProtocol: AnyObject {
     func imageOutlet() -> (UIImageView?)
 }
 
-class SecondViewController: UIViewController {
+class DetailsViewController: UIViewController {
     
-    private var secondPresenter: SecondViewPresenterProtocol!
-    
-    let constants = Constants()
-    
-    var currentFilms: Result?
+    var currentFilm: Film?
     
     @IBOutlet private weak var imageFilm: UIImageView!
     @IBOutlet private weak var titleFilm: UILabel!
@@ -31,6 +27,8 @@ class SecondViewController: UIViewController {
     @IBOutlet private weak var datePresentFilm: UILabel!
     @IBOutlet private weak var rateFilm: UILabel!
     @IBOutlet private weak var playFilmAction: UIButton!
+    
+    private var secondPresenter: DetailsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +38,8 @@ class SecondViewController: UIViewController {
         //      We remove the name of the button to return to the main screen
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        secondPresenter = SecondViewPresenter(view: self, currentFilms1: currentFilms)
-        secondPresenter?.setupSVCDataPresenter()
+        secondPresenter = DetailsPresenter(view: self, currentFilms1: currentFilm)
+        secondPresenter?.setupDataPresenter()
     }
     
     @IBAction private func playFilmAction(_ sender: UIButton) {
@@ -56,14 +54,14 @@ class SecondViewController: UIViewController {
     }
 }
 
-extension SecondViewController: SecondViewControllerProtocol {
+extension DetailsViewController: DetailsViewControllerProtocol {
     
     func imageOutlet() -> (UIImageView?) {
         guard let imageOutlet = imageFilm else { return nil }
         return imageOutlet
     }
     
-    func setupSVCData(titleFilm: String?, overviewFilm: String?, rateFilm: String?, datePresentFilm: String?, imageFilm1: UIImageView) {
+    func setupData(titleFilm: String?, overviewFilm: String?, rateFilm: String?, datePresentFilm: String?, imageFilm1: UIImageView) {
         
         self.titleFilm.text = titleFilm
         self.overviewFilm.text = overviewFilm
