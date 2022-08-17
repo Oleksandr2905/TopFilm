@@ -236,12 +236,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="SecondViewController" id="j1U-7K-LVm"/>
                     <connections>
-                        <outlet property="datePresentFilm" destination="ug0-OT-rQ0" id="GZB-GD-vSa"/>
-                        <outlet property="imageFilm" destination="ne4-jU-SEh" id="hmh-v7-knq"/>
-                        <outlet property="overviewFilm" destination="1y0-yk-oDT" id="icZ-t7-HHu"/>
-                        <outlet property="playFilmAction" destination="lw6-cT-aXv" id="RCQ-54-AzG"/>
-                        <outlet property="rateFilm" destination="3Rm-97-cF5" id="c1h-xT-HE1"/>
-                        <outlet property="titleFilm" destination="HQ7-4C-k4Z" id="hcp-cY-3H8"/>
+                        <outlet property="dateLabel" destination="ug0-OT-rQ0" id="GZB-GD-vSa"/>
+                        <outlet property="filmImageView" destination="ne4-jU-SEh" id="hmh-v7-knq"/>
+                        <outlet property="overviewLabel" destination="1y0-yk-oDT" id="icZ-t7-HHu"/>
+                        <outlet property="rateLabel" destination="3Rm-97-cF5" id="pQ1-TI-0wS"/>
+                        <outlet property="titleLabel" destination="HQ7-4C-k4Z" id="hcp-cY-3H8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ow-IO-V96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

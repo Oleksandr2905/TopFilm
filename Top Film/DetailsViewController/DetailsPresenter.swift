@@ -9,44 +9,16 @@ import Foundation
 import UIKit
 
 protocol DetailsPresenterProtocol {
-    func setupDataPresenter()
-    func configure() -> Film?
+    var film: Film { get }
 }
 
 class DetailsPresenter: DetailsPresenterProtocol {
     
     private let view: DetailsViewControllerProtocol
-    private var currentFilms: Film?
+    let film: Film
     
-    required init(view: DetailsViewControllerProtocol, currentFilms1: Film?) {
+    required init(view: DetailsViewControllerProtocol, film: Film) {
         self.view = view
-        self.currentFilms = currentFilms1
-    }
-    
-    func configure() -> Film? {
-        if currentFilms != nil {
-            return currentFilms
-        } else {
-            print("error")
-        }
-        return currentFilms
-    }
-    
-    func setupDataPresenter() {
-        let titleFilm = self.currentFilms?.originalTitle
-        let overviewFilm = self.currentFilms?.overview
-        let rateFilm = self.currentFilms?.voteAverageString
-        let datePresentFilm = self.currentFilms?.releaseDate
-        let inputImageData = self.currentFilms?.posterPath
-        let imageFilm = view.imageOutlet()
-        ImageDownloaderManager.loadImageFromDatabase(inputImageData: inputImageData ?? "",
-                                                     outputImage: imageFilm!)
-        
-        self.view.setupData(titleFilm: titleFilm,
-                               overviewFilm: overviewFilm,
-                               rateFilm: rateFilm,
-                               datePresentFilm: datePresentFilm,
-                               imageFilm1: imageFilm!)
-        
+        self.film = film
     }
 }

@@ -7,44 +7,56 @@
 
 import UIKit
 
-protocol DetailsViewControllerProtocol: AnyObject {
-    func setupData(titleFilm: String?,
-                      overviewFilm: String?,
-                      rateFilm: String?,
-                      datePresentFilm: String?,
-                      imageFilm1: UIImageView)
+protocol DetailsViewControllerProtocol {
     
-    func imageOutlet() -> (UIImageView?)
 }
 
 class DetailsViewController: UIViewController {
     
-    var currentFilm: Film?
+    @IBOutlet private weak var filmImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var overviewLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var rateLabel: UILabel!
     
-    @IBOutlet private weak var imageFilm: UIImageView!
-    @IBOutlet private weak var titleFilm: UILabel!
-    @IBOutlet private weak var overviewFilm: UILabel!
-    @IBOutlet private weak var datePresentFilm: UILabel!
-    @IBOutlet private weak var rateFilm: UILabel!
-    @IBOutlet private weak var playFilmAction: UIButton!
-    
-    private var secondPresenter: DetailsPresenterProtocol!
+    private var presenter: DetailsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavBar()
+        setupViews()
+    }
+    
+    func setupPresenter(film: Film) {
+        self.presenter = DetailsPresenter(view: self, film: film)
+    }
+    
+    private func setupNavBar() {
         self.title = "TOP Film"
         
         //      We remove the name of the button to return to the main screen
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    private func setupViews() {
+        let film = presenter.film
         
-        secondPresenter = DetailsPresenter(view: self, currentFilms1: currentFilm)
-        secondPresenter?.setupDataPresenter()
+        self.titleLabel.text = film.originalTitle
+        self.overviewLabel.text = film.overview
+        self.rateLabel.text = film.voteAverageString
+        self.dateLabel.text = film.releaseDate
+        
+        let inputImageData = film.posterPath
+        ImageDownloaderManager.loadImageFromDatabase(inputImageData: inputImageData,
+                                                     outputImage: filmImageView)
+        
+        GradientPoster.addBlackGradientLayerInBackground(image: filmImageView, frame: filmImageView.bounds, colors: [.clear, .black])
     }
     
     @IBAction private func playFilmAction(_ sender: UIButton) {
         let alertController = UIAlertController(title: nil,
-                                                message: secondPresenter.configure()?.originalTitle,
+                                                message: presenter.film.originalTitle,
                                                 preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -56,21 +68,6 @@ class DetailsViewController: UIViewController {
 
 extension DetailsViewController: DetailsViewControllerProtocol {
     
-    func imageOutlet() -> (UIImageView?) {
-        guard let imageOutlet = imageFilm else { return nil }
-        return imageOutlet
-    }
-    
-    func setupData(titleFilm: String?, overviewFilm: String?, rateFilm: String?, datePresentFilm: String?, imageFilm1: UIImageView) {
-        
-        self.titleFilm.text = titleFilm
-        self.overviewFilm.text = overviewFilm
-        self.rateFilm.text = rateFilm
-        self.datePresentFilm.text = datePresentFilm
-        self.imageFilm = imageFilm1
-        
-        GradientPoster.addBlackGradientLayerInBackground(image: imageFilm, frame: imageFilm.bounds, colors: [.clear, .black])
-    }
 }
 
 

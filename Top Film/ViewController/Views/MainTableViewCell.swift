@@ -8,12 +8,12 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
-
+    
     @IBOutlet private weak var imageOfFilm: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var overviewLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-        
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         resetCTVC()
@@ -36,7 +36,7 @@ class MainTableViewCell: UITableViewCell {
         titleLabel.text = film.originalTitle
         overviewLabel.text = film.overview
         dateLabel.text = "Release: " + film.releaseDate
-   
+        
         ImageDownloaderManager.loadImageFromDatabase(inputImageData: film.posterPath, outputImage: imageOfFilm)
     }
 }

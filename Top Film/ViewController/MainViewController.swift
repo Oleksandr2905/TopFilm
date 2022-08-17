@@ -17,7 +17,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet private weak var tableView: UITableView!
     
     private var presenter: MainPresenterProtocol!
-          
+    
     private let segueIdentifier = "showDetail"
     
     override func viewDidLoad() {
@@ -29,12 +29,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         presenter = MainPresenter(view: self)
         presenter.filmsInfoDataView()
     }
-//    The number of lines is equal to the number of elements of the object
+    //    The number of lines is equal to the number of elements of the object
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getRowsCount()
     }
     
-//    Cell configuration
+    //    Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableViewCell
         let film = presenter.getFilm(for: indexPath.row)
@@ -53,11 +53,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let film = presenter.getFilm(for: indexPath.row)
             let secondVC = segue.destination as! DetailsViewController
-            secondVC.currentFilm = film
+            secondVC.setupPresenter(film: film)
         }
     }
 }
-    
+
 extension MainViewController: MainViewControllerProtocol {
     //    Interface update
     func updateInterfaceWith() {
